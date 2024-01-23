@@ -9,15 +9,16 @@ i18n.configure({
 module.exports = {
     deliverEmail: function (dest, subject, body) {
         var transport = nodemailer.createTransport({
-            service: process.env.EMAIL_SERVICE,
-            //host: process.env.EMAIL_HOST,
-            //port: Number(process.env.EMAIL_PORT),
+            service: "gmail",
             auth: {
-                //user: process.env.EMAIL_USER,
-                user: process.env.EMAIL,
-                pass: process.env.EMAIL_PWD
-            }
-        });
+              type: "OAuth2",
+              user: process.env.USER_EMAIL,
+              accessToken: process.env.ACCESS_TOKEN,
+              clientId: process.env.CLIENT_ID,
+              clientSecret: process.env.CLIENT_SECRET,
+              refreshToken: process.env.REFRESH_TOKEN,
+            },
+          });
     
         var mailOptions = {
             from: process.env.EMAIL,

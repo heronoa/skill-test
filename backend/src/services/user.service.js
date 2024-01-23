@@ -67,13 +67,19 @@ class UserService {
         if (!this.emailValidation(email)) {
             return {response: false, message: "Email validation failed.", data:null}
         }
+
+        console.log("CALLING VERIFY EMAIL!!!")
         let verificationCode = this.makeRandomString(4);
 
         const subject = i18n.__({phrase: "MGL Exchange: Email Verification", locale: locale})
+        console.log({subject})
+
         const body = i18n.__({phrase: "Your Email verification code is %s", locale: locale}, verificationCode);
         emailService.deliverEmail(email, subject, body)
         
         let prev = await EmailVerifyModel.findOne({email:email});
+        console.log({prev})
+
         if (prev) {
             let result = await EmailVerifyModel.update({verify_code:verificationCode}, prev.id);
             if (!result) {
