@@ -83,13 +83,13 @@ class Wallet {
         // let privateKey = this.createPrivateKey(keyphrase);
         let privateKey = this.createPolygonKey();
         let publicKey = this.getPublicKey(privateKey);
-        let polygon_tokensymbol ="mgl,matic";
-        let polygonmain_assets ="0xcbAe2a4625c5CB99391D8F1a0F5121B3E5A176bb,0x0000000000000000000000000000000000001010";
-        let polygontest_assets ="0xcbAe2a4625c5CB99391D8F1a0F5121B3E5A176bb,0x0000000000000000000000000000000000001010";
+        let polygon_tokensymbol ="mgl,matic,eth";
+        let polygonmain_assets ="0xcbAe2a4625c5CB99391D8F1a0F5121B3E5A176bb,0x0000000000000000000000000000000000001010,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
+        let polygontest_assets ="0xcbAe2a4625c5CB99391D8F1a0F5121B3E5A176bb,0x0000000000000000000000000000000000001010,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
         let network ="0,1";
-        let bsc_tokensymbol ="mgl,BNB,BUSD";
-        let bscmain_assets = "0xcbAe2a4625c5CB99391D8F1a0F5121B3E5A176bb,0x0000000000000000000000000000000000001010,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
-        let bsctest_assets = "0xcbAe2a4625c5CB99391D8F1a0F5121B3E5A176bb,0x0000000000000000000000000000000000001010,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
+        let bsc_tokensymbol ="mgl,BNB,BUSD,eth";
+        let bscmain_assets = "0xcbAe2a4625c5CB99391D8F1a0F5121B3E5A176bb,0x0000000000000000000000000000000000001010,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
+        let bsctest_assets = "0xcbAe2a4625c5CB99391D8F1a0F5121B3E5A176bb,0x0000000000000000000000000000000000001010,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56,0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
         keyphrase = this.decrypt(keyphrase)
 
         return {
